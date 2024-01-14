@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Shooting
+  m_Name: Wolf_Dying
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1154412228, guid: 02c39cb49df05b243aacca196796c852, type: 3}
-    - time: 0.083333336
-      value: {fileID: 1408776766, guid: 02c39cb49df05b243aacca196796c852, type: 3}
-    - time: 0.16666667
-      value: {fileID: 1162541060, guid: 02c39cb49df05b243aacca196796c852, type: 3}
-    - time: 0.25
-      value: {fileID: -803555310, guid: 02c39cb49df05b243aacca196796c852, type: 3}
+      value: {fileID: 726168692, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - time: 0.14285715
+      value: {fileID: -447176137, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - time: 0.2857143
+      value: {fileID: -1908604240, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - time: 0.42857143
+      value: {fileID: -1675060414, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - time: 0.5714286
+      value: {fileID: 754999147, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - time: 0.71428573
+      value: {fileID: 1314594733, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 12
+  m_SampleRate: 7
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -50,16 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1154412228, guid: 02c39cb49df05b243aacca196796c852, type: 3}
-    - {fileID: 1408776766, guid: 02c39cb49df05b243aacca196796c852, type: 3}
-    - {fileID: 1162541060, guid: 02c39cb49df05b243aacca196796c852, type: 3}
-    - {fileID: -803555310, guid: 02c39cb49df05b243aacca196796c852, type: 3}
+    - {fileID: 726168692, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - {fileID: -447176137, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - {fileID: -1908604240, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - {fileID: -1675060414, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - {fileID: 754999147, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
+    - {fileID: 1314594733, guid: 84a54a636cc924342af577ba35c4a98c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.33333334
+    m_StopTime: 0.85714287
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,4 +84,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.71428573
+    functionName: Die
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

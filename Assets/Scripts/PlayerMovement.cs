@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,12 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private LayerMask groundLayer;
-
-    private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 12f;
-
-    private enum MovementState { idle, running, jumping, falling, shooting }
+    private float dirX = 0f;
+    private bool facingRight = true;
+    private enum MovementState { idle, running, jumping, falling }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
-        //if to fix spam on velocity while static (happens when char dies)
         if (rb.bodyType != RigidbodyType2D.Static)
         {
             dirX = Input.GetAxisRaw("Horizontal");
@@ -49,13 +47,20 @@ public class PlayerMovement : MonoBehaviour
         MovementState state;
         if (dirX > 0f)
         {
-            state = MovementState.running;
-            sprite.flipX = false;
+           state = MovementState.running;
+           if (facingRight != true)
+            {
+                Flip();
+            }
+ 
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            sprite.flipX = true;
+            if (facingRight)
+            {
+                Flip();
+            }
         }
         else
         {
@@ -74,6 +79,12 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
+        
+    }
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);

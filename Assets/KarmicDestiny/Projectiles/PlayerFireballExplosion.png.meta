@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 840253941f609864bb7e3a4f1600f922
+guid: 677d58f8eb9f1d04eb1f186176657e2d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WolfWalking_0
+      name: PlayerFireballExplosion_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce0c58787612a37488c76421a71f1d3f
-      internalID: -1324250095
+      spriteID: 0c0ecf3726fe30a4882fbbcab28286f3
+      internalID: 707631905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_1
+      name: PlayerFireballExplosion_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f8439a432ab8b42ae85d1dee3bbaab
-      internalID: 374501136
+      spriteID: 0fed71a3b3220a942ad8b40897211497
+      internalID: -871394768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_2
+      name: PlayerFireballExplosion_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612abc76176d5a04abf568e2ee19496b
-      internalID: 217922475
+      spriteID: e5083ad2931da074abfda5ded63f6943
+      internalID: 783370456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_3
+      name: PlayerFireballExplosion_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4f78c20baf00ed4cb1a9ac2914420aa
-      internalID: 1764211538
+      spriteID: aa775a82bc706e349b5b0c1183db9f59
+      internalID: -1877391292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_4
+      name: PlayerFireballExplosion_4
       rect:
         serializedVersion: 2
         x: 128
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4206e3a6dee5c4e47b93208b16976e46
-      internalID: 1872236747
+      spriteID: 017c1e6393c0e114a806a7da4d8e7bd6
+      internalID: -1388196601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_5
+      name: PlayerFireballExplosion_5
       rect:
         serializedVersion: 2
         x: 160
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03e60c1f35333144b8a0c962725cabd4
-      internalID: -1024839045
+      spriteID: daa55f835944fa9429a518031cf5f117
+      internalID: 1924456551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_6
+      name: PlayerFireballExplosion_6
       rect:
         serializedVersion: 2
         x: 192
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69cfab02136ee3d438d5bfc416c85d58
-      internalID: -785784063
+      spriteID: 390996d547e6ad148aeec9f6180f4ef8
+      internalID: -1902686398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_7
+      name: PlayerFireballExplosion_7
       rect:
         serializedVersion: 2
         x: 224
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71d6f9e6cb590364ea46d8ee915f5e75
-      internalID: -1484753192
+      spriteID: 055aa837f6cb95046858674491c6616b
+      internalID: 1506096488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfWalking_8
+      name: PlayerFireballExplosion_8
       rect:
         serializedVersion: 2
         x: 256
@@ -305,71 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36dffedf3143dbe478ed966107f6818b
-      internalID: -746216745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfWalking_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eecdf5ea9f89734dba62f5cf9385fb7
-      internalID: -871509324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfWalking_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdf2d656b71271c418432bf5770933f4
-      internalID: 1144416486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfWalking_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 212ff791066c9f841b6a0a23f3e45a3e
-      internalID: -1006249304
+      spriteID: b854f58177b835e448d4b5b235c89998
+      internalID: -950742721
       vertices: []
       indices: 
       edges: []
@@ -385,18 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WolfWalking_0: -1324250095
-      WolfWalking_1: 374501136
-      WolfWalking_10: 1144416486
-      WolfWalking_11: -1006249304
-      WolfWalking_2: 217922475
-      WolfWalking_3: 1764211538
-      WolfWalking_4: 1872236747
-      WolfWalking_5: -1024839045
-      WolfWalking_6: -785784063
-      WolfWalking_7: -1484753192
-      WolfWalking_8: -746216745
-      WolfWalking_9: -871509324
+      PlayerFireballExplosion_0: 707631905
+      PlayerFireballExplosion_1: -871394768
+      PlayerFireballExplosion_2: 783370456
+      PlayerFireballExplosion_3: -1877391292
+      PlayerFireballExplosion_4: -1388196601
+      PlayerFireballExplosion_5: 1924456551
+      PlayerFireballExplosion_6: -1902686398
+      PlayerFireballExplosion_7: 1506096488
+      PlayerFireballExplosion_8: -950742721
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

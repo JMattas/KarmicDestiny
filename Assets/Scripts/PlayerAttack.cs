@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown = 2;
+    [SerializeField] private Transform firepoint;
+    [SerializeField] private GameObject fireball;
     private Animator anim;
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
@@ -23,10 +25,12 @@ public class PlayerAttack : MonoBehaviour
 
         cooldownTimer += Time.deltaTime;
     }
+    
     private void Attack()
     {
-        print("test");
         anim.SetTrigger("shooting");
         cooldownTimer = 0;
+        Instantiate(fireball, firepoint.position, firepoint.rotation);
+
     }
 }
