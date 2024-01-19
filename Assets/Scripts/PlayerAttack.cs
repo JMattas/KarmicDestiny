@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
        anim = GetComponent<Animator>(); 
-        playerMovement = GetComponent<PlayerMovement>();
+       playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
