@@ -10,11 +10,15 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+
+    [SerializeField] private Vector2 boxSize;
+    [SerializeField] private float castDistance;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 12f;
     private float dirX = 0f;
     private bool facingRight = true;
+    private bool manualMovementAllowed = true;
     private enum MovementState { idle, running, jumping, falling }
     // Start is called before the first frame update
     void Start()
@@ -28,31 +32,34 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (rb.bodyType != RigidbodyType2D.Static)
+        if (!(rb.bodyType == RigidbodyType2D.Static || !manualMovementAllowed))
         {
-            dirX = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+                dirX = Input.GetAxisRaw("Horizontal");
+                rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-            if (Input.GetButtonDown("Jump") && IsGrounded())
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);               
-            }
-            
-            UpdateAnimationState();
+                if (Input.GetButtonDown("Jump") && IsGrounded())
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                }
         }
+        UpdateAnimationState();
     }
-
+    public bool DisableMomevementControls
+    {
+        get { return manualMovementAllowed; }
+        set { manualMovementAllowed = value; dirX = 1f; }
+    }
     private void UpdateAnimationState()
     {
         MovementState state;
         if (dirX > 0f)
         {
-           state = MovementState.running;
-           if (facingRight != true)
+            state = MovementState.running;
+            if (facingRight != true)
             {
                 Flip();
             }
- 
+
         }
         else if (dirX < 0f)
         {
@@ -75,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.falling;
         }
-        
         anim.SetInteger("state", (int)state);
     }
 
@@ -87,8 +93,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
-        
+        return (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer));
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position - transform.up * castDistance,boxSize);
+    }
 }

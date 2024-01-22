@@ -9,12 +9,13 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] GameObject backSideOfHealthPrefab;
     [SerializeField] PlayerLife playerLife;
     private int maxHealth;
+    private int lastHealthUpdated;
     List<Transform> currentHealthPoints = new List<Transform>();
-    Image healthImage;
+
     void Start()
     {
         maxHealth = playerLife.playerCurrentLife;
-        Debug.Log(maxHealth);
+        lastHealthUpdated = maxHealth;
         for (int i = 0; i < maxHealth; i++)
         {
             GameObject instantiatedPrefab = Instantiate(backSideOfHealthPrefab,transform);
@@ -32,8 +33,9 @@ public class HealthSystem : MonoBehaviour
     }
     private void Update()
     {
-        if (maxHealth != playerLife.playerCurrentLife)
+        if (lastHealthUpdated != playerLife.playerCurrentLife)
         {
+            lastHealthUpdated = playerLife.playerCurrentLife;
             UpdateHealth();
         }
         

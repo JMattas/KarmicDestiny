@@ -20,27 +20,34 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         lifetime += Time.deltaTime;
-        if (lifetime > 5)
+        if (lifetime > 2)
         {
-            anim.SetTrigger("explode");
+            EraseProjectile();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        
          Enemy enemy = hitInfo.GetComponent<Enemy>();
         
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
         }
-        
-        Debug.Log(hitInfo.name);
+        if (hitInfo.tag == "Finish")
+        {
+            return;
+        }
+        //Debug.Log(hitInfo.name);
+        EraseProjectile();
+    }
+    private void EraseProjectile()
+    {
         GetComponent<CircleCollider2D>().enabled = false;
         rb.velocity = transform.right*0;
-        anim.SetTrigger("explode");     
+        anim.SetTrigger("explode"); 
     }
-
 
     private void Deactivate()
     {
