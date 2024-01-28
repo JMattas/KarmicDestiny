@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] GameObject skull;
     [SerializeField] int health = 100;
+    [SerializeField] private string id;
+    [ContextMenu("Generate guid for id")]
+    
+    private void GenerateGuid()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
     private Animator anim;
+    private bool killed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +27,24 @@ public class Enemy : MonoBehaviour
     {
         
     }
+    public void LoadData(GameData data)
+    {
+        data.deathList.TryGetValue(id, out killed);
+        if(killed)
+        {
+            //gameObject.SetActive(false);
+            Die();
+        }
+    }
+    public void SaveData(ref GameData data)
+    {
+        if(data.deathList.ContainsKey(id))
+        {
+            data.deathList.Remove(id);
+        }
+        data.deathList.Add(id, killed);
+    }
+ 
 
     public void TakeDamage(int damage)
     {
@@ -30,6 +58,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        killed = true;
         Destroy(gameObject);
+        Instantiate(skull, transform.position, transform.rotation);
     }
 }

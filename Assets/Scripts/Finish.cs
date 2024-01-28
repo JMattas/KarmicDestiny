@@ -6,28 +6,44 @@ using UnityEngine.SceneManagement;
 public class Finish : MonoBehaviour
 {
     private bool levelCompleted = false;
-    /*
+    [SerializeField] private Rigidbody2D rb;
+    private float speed = 7f;
+    private float simulationDuration = 10f;
+    [SerializeField] CameraController followingPlayer;
+    [SerializeField] PlayerMovement PlayerMovement;
+    
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (simulationDuration < 2f)
+        {
+            RunningSimulation();
+        }
     }
-    */
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player" && !levelCompleted)
         {
+            TurnOffCameraFollowing();
+            PlayerMovement.DisableMomevementControls = false;
+            simulationDuration = 0f;
             levelCompleted = true;
             //sounds?
             Invoke("CompleteLevel", 2f);
             
         }
+    }
+    void TurnOffCameraFollowing()
+    {
+        followingPlayer.FollowingPlayer = false;
+
+    }
+    private void RunningSimulation()
+    {
+        simulationDuration += Time.deltaTime;
+        rb.velocity = new Vector2(1 * speed, rb.velocity.y);
+
     }
     private void CompleteLevel()
     {

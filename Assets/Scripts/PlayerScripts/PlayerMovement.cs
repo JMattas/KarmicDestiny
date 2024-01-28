@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         get { return manualMovementAllowed; }
         set { manualMovementAllowed = value; dirX = 1f; }
     }
+
     private void UpdateAnimationState()
     {
         MovementState state;
