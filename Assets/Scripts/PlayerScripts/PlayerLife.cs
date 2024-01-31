@@ -12,6 +12,7 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private float iFramesDurtaion;
     [SerializeField] private int numberOffFlashes;
+    [SerializeField] private GameObject retryWindow;
     private SpriteRenderer spriteRend;
     private Rigidbody2D rb;
     private Animator anim;
@@ -77,9 +78,8 @@ public class PlayerLife : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
-
-    private void RestartLevel()
+    private void OpenRetryWindow()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        retryWindow.SetActive(true);
     }
 }

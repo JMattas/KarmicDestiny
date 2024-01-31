@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Finish : MonoBehaviour
+public class Finish : MonoBehaviour, IDataPersistence
 {
     private bool levelCompleted = false;
     [SerializeField] private Rigidbody2D rb;
@@ -11,6 +11,8 @@ public class Finish : MonoBehaviour
     private float simulationDuration = 10f;
     [SerializeField] CameraController followingPlayer;
     [SerializeField] PlayerMovement PlayerMovement;
+    [SerializeField] GameObject confirmationWindow;
+    private int tempLevelfromData;
     
     // Start is called before the first frame update
     void Update()
@@ -47,8 +49,23 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel()
     {
+        confirmationWindow.SetActive(true);
+
+        if (tempLevelfromData < SceneManager.GetActiveScene().buildIndex)
+        {
+            tempLevelfromData=SceneManager.GetActiveScene().buildIndex;
+        }
         DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadScene(1);
+
     }
 
+    public void LoadData(GameData data)
+    {
+        this.tempLevelfromData = data.unlockedLevel;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.unlockedLevel = this.tempLevelfromData;
+    }
 }
