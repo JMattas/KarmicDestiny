@@ -9,7 +9,7 @@ public class TabScript : MonoBehaviour
     [SerializeField] GameObject[] tabs;
     [SerializeField] GameObject levelPages;
     [SerializeField] TextMeshProUGUI buttonText;
-
+    [SerializeField] TextMeshProUGUI textToPass;
     private void Start()
     {
         ButtonsToArray();
@@ -21,7 +21,7 @@ public class TabScript : MonoBehaviour
             tabs[i].SetActive(false);
         }
         tabs[chosenTab-1].SetActive(true);
-        buttonText.text =gameObject.name.Remove(gameObject.name.Length-7,7);
+        buttonText.text =textToPass.text;
     }
     private void ButtonsToArray()
     {

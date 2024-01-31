@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VFX;
+
 
 public class Enemy : MonoBehaviour, IDataPersistence
 {
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour, IDataPersistence
             Die();
         }
     }
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         if(data.deathList.ContainsKey(id))
         {

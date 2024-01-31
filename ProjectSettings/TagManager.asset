@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Heart
   - Trap
   - Enemy
   layers:
@@ -16,7 +15,7 @@ TagManager:
   - UI
   - Ground
   - 
-  - 
+  - Consumables
   - 
   - Player
   - Enemy

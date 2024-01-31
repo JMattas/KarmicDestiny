@@ -15,6 +15,7 @@ public class PlayerLife : MonoBehaviour
     private SpriteRenderer spriteRend;
     private Rigidbody2D rb;
     private Animator anim;
+    
     void Awake()
     {
         spriteRend = GetComponent<SpriteRenderer>();
@@ -25,7 +26,6 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         switch (collision.gameObject.tag)
         {   
             case "Trap":
@@ -37,31 +37,8 @@ public class PlayerLife : MonoBehaviour
             default:
                 break;
         }
-        /*
-        if (collision.gameObject.CompareTag("Trap")|| collision.gameObject.CompareTag("Enemy"))
-        {
-            Hurt(1);
-        }
-        if (collision.gameObject.CompareTag("Heart"))
-        {
-            Heal(1);
-            Destroy(collision.gameObject);
-        }
-        */
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case "Heart":
-                Heal(1);
-                Destroy(collision.gameObject);
-                break;
-            default:
-                break;
-        }
-    }
-    private void Heal(int lifeGained)
+    public void Heal(int lifeGained)
     {
         playerCurrentLife += lifeGained;
         if (playerCurrentLife > maxPlayerHealth)

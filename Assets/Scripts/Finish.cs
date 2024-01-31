@@ -34,7 +34,7 @@ public class Finish : MonoBehaviour
             
         }
     }
-    void TurnOffCameraFollowing()
+    private void TurnOffCameraFollowing()
     {
         followingPlayer.FollowingPlayer = false;
 
@@ -47,7 +47,8 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel()
     {
-        //vracíme do main menu, upravit
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        DataPersistenceManager.instance.SaveGame();
+        SceneManager.LoadScene(1);
     }
+
 }
