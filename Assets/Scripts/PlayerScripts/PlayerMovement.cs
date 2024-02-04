@@ -18,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private bool facingRight = true;
     private bool manualMovementAllowed = true;
+    
+    [SerializeField] float coyoteTime = 0.1f;
+    private float coyoteTimeCounter = 0f;
+
+    [SerializeField] private float jumpBufferTime  = 0.1f;
+    private float jumpBufferCounter = 0f;
+
     private enum MovementState { idle, running, jumping, falling }
     // Start is called before the first frame update
     void Start()
@@ -31,19 +38,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!(rb.bodyType == RigidbodyType2D.Static || !manualMovementAllowed))
-        {
-                dirX = Input.GetAxisRaw("Horizontal");
-                rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        JumpingQOL();
 
-                if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (manualMovementAllowed)
+        {
+            dirX = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+            if (jumpBufferCounter>0f && (coyoteTimeCounter>0f))
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                }
+                    coyoteTimeCounter = 0f;
+                    jumpBufferCounter = 0f;
+                } 
         }
         UpdateAnimationState();
     }
-    public bool DisableMomevementControls
+    public bool EnableMomevementControls
     {
         get { return manualMovementAllowed; }
         set { manualMovementAllowed = value; dirX = 1f; }
@@ -98,5 +109,25 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance,boxSize);
+    }
+    private void JumpingQOL()
+    {
+        if (IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
     }
 }

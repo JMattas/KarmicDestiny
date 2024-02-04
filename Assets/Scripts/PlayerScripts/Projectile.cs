@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-        if (hitInfo.tag == "Finish")
+        if (hitInfo.tag == "Event")
         {
             return;
         }

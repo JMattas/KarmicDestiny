@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trap
   - Enemy
+  - Event
   layers:
   - Default
   - TransparentFX
@@ -15,13 +16,13 @@ TagManager:
   - UI
   - Ground
   - 
-  - Consumables
+  - 
   - 
   - Player
+  - Consumables
+  - 
+  - 
   - Enemy
-  - 
-  - 
-  - 
   - 
   - 
   - 

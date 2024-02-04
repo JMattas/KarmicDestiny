@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] private int maxPlayerHealth = 3;
@@ -47,7 +46,7 @@ public class PlayerLife : MonoBehaviour
             playerCurrentLife = maxPlayerHealth;
         }
     }
-    private void Hurt(int damage)
+    public void Hurt(int damage)
     {
 
         playerCurrentLife -= damage;
@@ -62,13 +61,14 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        gameObject.GetComponent<PlayerMovement>().EnableMomevementControls = false;
         anim.SetTrigger("death");
     }
 
-    //10 is Player, 11 are Enemies
+
     private IEnumerator Invulnerability()
     {
-        Physics2D.IgnoreLayerCollision(10,11, true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         for (int i = 0; i < numberOffFlashes; i++)
         {
             spriteRend.color = new Color(1, 1, 1, 0.5f);
@@ -76,7 +76,7 @@ public class PlayerLife : MonoBehaviour
             spriteRend.color = Color.white;
             yield return new WaitForSeconds(iFramesDurtaion / (numberOffFlashes * 2));
         }
-        Physics2D.IgnoreLayerCollision(10, 11, false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
     }
     private void OpenRetryWindow()
     {
