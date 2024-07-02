@@ -8,6 +8,7 @@ public class RestartLevel : MonoBehaviour
     public void SaveAndRestartLevel()
     {
         DataPersistenceManager.instance.SaveGame();
+        AudioManager.instance.musicSource.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

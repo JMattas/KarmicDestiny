@@ -39,14 +39,14 @@ public class Projectile : MonoBehaviour
         {
             return;
         }
-        //Debug.Log(hitInfo.name);
         EraseProjectile();
     }
     private void EraseProjectile()
     {
         GetComponent<CircleCollider2D>().enabled = false;
         rb.velocity = transform.right*0;
-        anim.SetTrigger("explode"); 
+        anim.SetTrigger("explode");
+        AudioManager.instance.PlaySFX("ProjectileDestroyed");
     }
 
     private void Deactivate()

@@ -16,11 +16,13 @@ public class HeartPickup : MonoBehaviour
         {
             collectable = false;
             collision.gameObject.GetComponent<PlayerLife>().Heal(1);
+            AudioManager.instance.PlaySFX("HeartCollected");
             anim.SetTrigger("collected");
         }
     }
     private void DestroyAfterAnimation()
     {
         Destroy(gameObject);
+        
     }
 }

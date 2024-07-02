@@ -55,16 +55,10 @@ public class PlayerLife : MonoBehaviour
             Die();
             return;
         }
+        AudioManager.instance.PlaySFX("PlayerHurt");
         anim.SetTrigger("hurt");
         StartCoroutine(Invulnerability());
     }
-    private void Die()
-    {
-        rb.bodyType = RigidbodyType2D.Static;
-        gameObject.GetComponent<PlayerMovement>().EnableMomevementControls = false;
-        anim.SetTrigger("death");
-    }
-
 
     private IEnumerator Invulnerability()
     {
@@ -78,8 +72,16 @@ public class PlayerLife : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
     }
+    private void Die()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        gameObject.GetComponent<PlayerMovement>().EnableMomevementControls = false;
+        AudioManager.instance.PlaySFX("PlayerDeath");
+        anim.SetTrigger("death");
+    }
     private void OpenRetryWindow()
     {
+        AudioManager.instance.musicSource.Stop();
         retryWindow.SetActive(true);
     }
 }

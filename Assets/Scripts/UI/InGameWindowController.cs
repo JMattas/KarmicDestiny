@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InGameWindowController : MonoBehaviour
 {
@@ -42,5 +43,12 @@ public class InGameWindowController : MonoBehaviour
         Time.timeScale = 1.0f;
         chosenWindow.SetActive(false);
         player.gameObject.GetComponent<PlayerMovement>().EnableMomevementControls = true;
+    }
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1.0f;
+        DataPersistenceManager.instance.SaveGame();
+        SceneManager.LoadScene(1);
+       
     }
 }

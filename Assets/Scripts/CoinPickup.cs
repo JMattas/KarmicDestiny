@@ -44,6 +44,7 @@ public class CoinPickup : MonoBehaviour, IDataPersistence
 
             updateCoinCounterInTextField.gameObject.GetComponent<CoinsStatus>().collectedCoin();
             collected = true;
+            AudioManager.instance.PlaySFX("CoinCollected");
             anim.SetTrigger("collected");
         }
 
@@ -51,6 +52,7 @@ public class CoinPickup : MonoBehaviour, IDataPersistence
     private void DestroyAfterAnimation()
     {
         Destroy(gameObject);
+        
     }
 
 }

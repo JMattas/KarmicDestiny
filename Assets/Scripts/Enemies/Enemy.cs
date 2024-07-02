@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour, IDataPersistence
         health -= damage;
         if (health <= 0)
         {
+            GetComponent<WaypointFollower>().enabled = false;
             anim.SetTrigger("dying");
             //Die();
         }

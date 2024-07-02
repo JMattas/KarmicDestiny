@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private bool facingRight = true;
     private bool manualMovementAllowed = true;
-    
-    [SerializeField] float coyoteTime = 0.1f;
+
+    [SerializeField] float coyoteTime = 0.2f;
     private float coyoteTimeCounter = 0f;
 
     [SerializeField] private float jumpBufferTime  = 0.1f;
@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         {
             dirX = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
             if (jumpBufferCounter>0f && (coyoteTimeCounter>0f))
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
