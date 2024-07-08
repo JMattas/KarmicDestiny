@@ -1,3 +1,10 @@
+## Pouze hraní
+1. Otevřít složku compressed game
+2. Složka obsahuje zip file obsahující sestavenou hru
+3. Po stažení a rozbalení je možné hru spustit přes KarmicDestiny.exe
+4. Doporučené rozlišení 1920x1080
+
+## Otevření celého projektu
 1. Stáhnout Unity Hub v https://unity.com/download 
 2. Po instalaci je třeba se přihlásit na svůj účet
 3. Stáhnout z githubu https://github.com/JMattas/KarmicDestiny celý main jako Zip file
