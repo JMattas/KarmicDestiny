@@ -14,4 +14,4 @@
  ![image](https://github.com/JMattas/KarmicDestiny/assets/113183750/ddd3a08b-d1a5-4fee-bb25-50739b4ed99c)
 6. Unity samo o sobě by si mělo říct, jakou verzi editoru požaduje -  2022.3.5f1
 7. Po instalaci editoru, lze projekt otevřít a v editoru File>Build settings> Build And Run, pro sestavení hry
-8. Sestavaná hra obsahuje "KarmicDestiny.exe" pro spuštění hry. Doporučené herní rozlišení pro hraní je 1920x1080.
+8. Sestavaná hra obsahuje "KarmicDestiny.exe" pro spuštění hry.
