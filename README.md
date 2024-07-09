@@ -43,4 +43,5 @@ Doporučené rozlišení 1920x1080
 ## Ukládání hry
 
 Hra se konstantně ukládá, vytvořená složka se nachází v C:\Users\ _"Jméno uživatele"_ \AppData\LocalLow\DefaultCompany\KarmicDestiny
+
 [↑Zpět nahoru↑](#karmic-destiny)
