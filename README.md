@@ -6,7 +6,7 @@
 - [Použité programy](#použité-programy-a-doporučení)
 - [Otevření celého projektu](#otevření-celého-projektu)
 - [Pouze hraní](#pouze-hraní)
-
+- [Ukládání hry](#ukládání-hry)
 
 ## O projektu
 Karmic destiny je nenáročná platformová hra, s menší zápletkou.
@@ -15,9 +15,10 @@ Monstra se neoživují, prozatím to nemá žádné jiné následky.
 </details>
 
 ## Použité programy a doporučení
-Unity Hub Unity Hub 3.8.0, https://unity.com/download 
-Doporučený operační systém: Windows 10 (build 19045.4529)
-Doporučené rozlišení 1920x1080
+Unity Hub Unity Hub 3.8.0, https://unity.com/download \
+Doporučený operační systém: Windows 10 (Build 19041+)\
+Doporučené herní rozlišení 1920x1080
+
 ## Otevření celého projektu
 1. Stáhnout Unity Hub v https://unity.com/download 
 2. Po instalaci je třeba se přihlásit na svůj účet
