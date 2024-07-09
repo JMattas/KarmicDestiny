@@ -1,11 +1,9 @@
-<a id="readme-top"></a>
-
 # Karmic Destiny
 
 ### Obsah
 
 - [O projektu](#o-projektu)
-- [Použité programy](#použité-programy)
+- [Použité programy](#použité-programy-a-doporučení)
 - [Otevření celého projektu](#otevření-celého-projektu)
 - [Pouze hraní](#pouze-hraní)
 
@@ -33,16 +31,16 @@ Doporučené rozlišení 1920x1080
 8. Sestavaná hra obsahuje "KarmicDestiny.exe" pro spuštění hry.
 
 
-<p align="right"><a href="readme-top">↑Zpět nahoru↑</a></p>
+[↑Zpět nahoru↑](#karmic-destiny)
 
 ## Pouze hraní
 1. Otevřít složku compressed game
 2. Složka obsahuje zip file obsahující sestavenou hru
 3. Po stažení a rozbalení je možné hru spustit přes KarmicDestiny.exe
 
-<p align="right"><a href="readme-top">↑Zpět nahoru↑</a></p>
+[↑Zpět nahoru↑](#karmic-destiny)
 
 ## Ukládání hry
 
 Hra se konstantně ukládá, vytvořená složka se nachází v C:\Users\ _"Jméno uživatele"_ \AppData\LocalLow\DefaultCompany\KarmicDestiny
-<p align="right"><a href="readme-top">↑Zpět nahoru↑</a></p>
+[↑Zpět nahoru↑](#karmic-destiny)
