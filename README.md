@@ -1,8 +1,23 @@
-## Pouze hraní
-1. Otevřít složku compressed game
-2. Složka obsahuje zip file obsahující sestavenou hru
-3. Po stažení a rozbalení je možné hru spustit přes KarmicDestiny.exe
-4. Doporučené rozlišení 1920x1080
+<a id="readme-top"></a>
+
+# Karmic Destiny
+
+### Obsah
+
+- [O projektu](#o-projektu)
+- [Použité programy](#použité-programy)
+- [Otevření celého projektu](#otevření-celého-projektu)
+- [Pouze hraní](#pouze-hraní)
+
+
+## O projektu
+Karmic destiny je nenáročná platformová hra, s menší zápletkou.
+<details><summary>zápletka</summary>
+Monstra se neoživují, prozatím to nemá žádné jiné následky.
+</details>
+
+## Použité programy
+Unity Hub Unity Hub 3.8.0, https://unity.com/download 
 
 ## Otevření celého projektu
 1. Stáhnout Unity Hub v https://unity.com/download 
@@ -15,3 +30,18 @@
 6. Unity samo o sobě by si mělo říct, jakou verzi editoru požaduje -  2022.3.5f1
 7. Po instalaci editoru, lze projekt otevřít a v editoru File>Build settings> Build And Run, pro sestavení hry
 8. Sestavaná hra obsahuje "KarmicDestiny.exe" pro spuštění hry.
+
+
+<p align="right"><a href="readme-top">↑Zpět nahoru↑</a></p>
+
+## Pouze hraní
+1. Otevřít složku compressed game
+2. Složka obsahuje zip file obsahující sestavenou hru
+3. Po stažení a rozbalení je možné hru spustit přes KarmicDestiny.exe
+4. Doporučené rozlišení 1920x1080
+
+<p align="right"><a href="readme-top">↑Zpět nahoru↑</a></p>
+
+## Ukládání hry
+
+Hra se konstantně ukládá, vytvořená složka se nachází v C:\Users\ _"Jméno uživatele"_ \AppData\LocalLow\DefaultCompany\KarmicDestiny
